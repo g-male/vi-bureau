@@ -153,13 +153,14 @@ display: flex;
 /* Mobile adjustments */
 @media (max-width: 767px) {
   .main-title{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     
   }
   
   .homepage-container {
    width: 100%;
-   
+   min-height: 100vh;
+    aspect-ratio: 9/16;
   }
   
   .title-section {
@@ -169,7 +170,7 @@ display: flex;
   }
   .aligned-blocks{
 width: auto;
-  
+  margin-top: 50vh;
     text-align: center;
   }
   
@@ -178,14 +179,14 @@ width: auto;
     top: 1rem;
     right: 1rem;
     font-size: 0.45rem;
-    margin-left: 0;
+    margin-left: 15vw;
  
   }
 
   
   .content-area {
     width: 88%;
-    height: 85%;
+    height: 82vh;
     top: 7%;
     transform: translateY(0);
    position: absolute;
@@ -202,11 +203,14 @@ width: auto;
    position: relative;
    margin-top: 10vh !important;
    margin-left: 8vw;
+   height: 75%;
   }
   .bottom-text-block{
 width: 90vw;
  max-width: 600px;
 font-size: 0.55rem;
 text-align: left;
+margin-top: 2rem;
+line-height: 0.95rem;
   }
 }
