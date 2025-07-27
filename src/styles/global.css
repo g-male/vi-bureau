@@ -146,6 +146,9 @@ display: flex;
 
 /* Mobile adjustments */
 @media (max-width: 767px) {
+  body{
+    overflow-y: hidden !important;
+  }
   .main-title{
     font-size: 1.8rem;
     
