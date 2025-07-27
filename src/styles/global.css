@@ -170,7 +170,7 @@ display: flex;
   }
   .aligned-blocks{
 width: auto;
-  margin-top: 57vh;
+  margin-top: 51vh;
     text-align: center;
     
   }
@@ -188,7 +188,7 @@ width: auto;
   
   .content-area {
     width: 88%;
-    height: 81vh;
+    height: 72vh;
     top: 5%;
     transform: translateY(0);
    position: absolute;
