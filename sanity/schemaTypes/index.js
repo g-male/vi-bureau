@@ -4,7 +4,7 @@ import homepage from './homepage';
 // Export the schema as an object with a types property
 export const schema = {
   types: [
-    model,
+    
     homepage,
     // Add other schema types here
   ],
