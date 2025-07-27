@@ -188,8 +188,8 @@ width: auto;
   
   .content-area {
     width: 88%;
-    height: 79vh;
-    top: 7%;
+    height: 81vh;
+    top: 5%;
     transform: translateY(0);
    position: absolute;
    
@@ -203,7 +203,7 @@ width: auto;
    transform: translateX(0);
    width: 100%;
    position: relative;
-   margin-top: 7vh !important;
+   margin-top: 4vh !important;
    margin-left: 7vw;
    height: 75%;
   }
