@@ -46,7 +46,7 @@ export default {
             {
               name: 'url',
               title: 'Link URL',
-              type: 'url',
+              type: 'string',
               validation: Rule => Rule.required().uri({ allowRelative: true }),
             },
           ],
