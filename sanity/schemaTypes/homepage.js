@@ -47,8 +47,13 @@ export default {
               name: 'url',
               title: 'Link URL',
               type: 'url',
-              validation: Rule => Rule.required().uri({ allowRelative: false }),
-            },
+                validation: Rule => Rule.uri({
+    allowRelative: false,
+    scheme: ['http', 'https', 'mailto']
+  })
+},
+
+            
           ],
         },
       ],
