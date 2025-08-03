@@ -39,7 +39,8 @@ html, body {
 
   box-sizing: border-box;
   margin-left: 1.5vw;*/
-  margin-top: 5%;
+  margin-top: 5vw;
+  margin-left: 2vw;
 }
 
 .aligned-blocks {
@@ -141,6 +142,33 @@ display: flex;
 
 .links-section a:hover {
   opacity: 0.6;
+}
+
+  /* For iPad portrait layouts only */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+.left-block{
+  margin-top: 10vw;
+}
+
+.content-area{
+margin-left: 23vw;
+width: 149%;
+right: auto;
+}
+.left-block{
+  margin-left: 0vw;
+}
+
+.bottom-text-block{
+  font-size: 0.7vw;
+  width: 60vw;
+}
+.links-section{
+  font-size: 0.7vw;
+}
+.main-title{
+  font-size: 1.8vw;
+}
 }
 
 
