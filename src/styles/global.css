@@ -25,10 +25,10 @@ html, body {
 }
 
 .homepage-container {
- display: flex;
-  align-items: flex-start;
-  height: 100vh;
-  position: relative;
+  display: flex;
+   /* horizontal center */
+    align-items: center; /* vertical center */
+    height: 100vh;
 }
 .left-block {
  z-index: 999;
@@ -39,7 +39,7 @@ html, body {
 
   box-sizing: border-box;
   margin-left: 1.5vw;*/
-  margin-top: 5vw;
+ 
   margin-left: 2vw;
 }
 
@@ -215,12 +215,7 @@ width: auto;
 
   
   .content-area {
-    width: 88%;
-    height: 72vh;
-    top: 5%;
-    transform: translateY(0);
-   position: absolute;
-   
+  
     
   }
   .main-image{
