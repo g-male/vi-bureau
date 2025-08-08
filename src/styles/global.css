@@ -71,7 +71,7 @@ width: auto;
 }
 .main-title img{
 
-  width: 16vw;
+  width: 15vw;
 }
 
 
@@ -82,7 +82,7 @@ width: auto;
   right: 0;
   transform: translateY(-50%);
   width: 80%;
-  height: 80vh;
+  height: 90vh;
   background-color: #f0f0f0;
   overflow: hidden;
 }
@@ -227,6 +227,7 @@ width: auto;
   
   .content-area {
   margin-top: -2.5vh;
+    height: 80vh;
   }
   .main-image{
     object-fit: cover;
