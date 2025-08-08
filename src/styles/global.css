@@ -69,7 +69,10 @@ width: auto;
   letter-spacing: 0.5vw;
   color: black;
 }
+.main-title img{
 
+  width: 16vw;
+}
 
 
 /* Main content area - Large image aligned to right */
@@ -113,8 +116,8 @@ width: auto;
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  font-size: 0.4vw;
-  letter-spacing: 0.2vw;
+  font-size: 0.5vw;
+    letter-spacing: 0.18vw;
   z-index: 10;
 }
 .bottom-text-block {
@@ -126,8 +129,8 @@ width: auto;
   line-height: 1.4;
 display: flex;
   flex-direction: row;
-  font-size: 0.4vw;
-  letter-spacing: 0.3em;
+  font-size: 0.5vw;
+   letter-spacing: 0.18vw;
   gap: 1rem;
 
 }
@@ -182,13 +185,19 @@ right: auto;
     font-size: 1.8rem;
     
   }
+
+  .main-title img{
+
+  width: 64vw;
+}
+
   
   .homepage-container {
    width: 100%;
    min-height: 100vh;
     aspect-ratio: 9/16;
     overflow-x: hidden;
-margin-top: -3vh;
+margin-top: -8vh;
   }
 
   
@@ -200,7 +209,7 @@ margin-top: -3vh;
   }
   .aligned-blocks{
 width: auto;
-  margin-top: 51vh;
+  margin-top: 53vh;
     text-align: center;
     
   }
@@ -209,7 +218,7 @@ width: auto;
     margin: 0 auto;
     top: 1rem;
     right: 1rem;
-    font-size: 0.45rem;
+    font-size: 2vw;
     margin-left: 15vw;
  transform: translateX(0) !important;
  letter-spacing: 0.5vw;
@@ -234,11 +243,11 @@ width: auto;
   .bottom-text-block{
 width: 90vw;
  max-width: 600px;
-font-size: 0.55rem;
+font-size: 2vw;
 text-align: left;
 margin-top: 2rem;
 line-height: 0.95rem;
 transform: translateX(0) !important;
-
+ letter-spacing: 0.5vw;
   }
 }

@@ -56,13 +56,13 @@ export default function ModelClientWrapper({ homepage }) {
         
               <div className="left-block">
         <div className="title-section">
-          <h1
+          <div
             ref={titleRef}
             className="main-title"
             style={{ visibility: layoutReady ? 'visible' : 'hidden' }}
           >
-            VI BUREAU
-          </h1>
+       <img src="/unnamed-2.webp" alt="VI Bureau" />
+          </div>
         </div>
 
         <div className="aligned-blocks">
