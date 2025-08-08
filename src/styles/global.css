@@ -197,7 +197,7 @@ right: auto;
    min-height: 100vh;
     aspect-ratio: 9/16;
     overflow-x: hidden;
-margin-top: -8vh;
+margin-top: -11vh;
   }
 
   
@@ -209,7 +209,7 @@ margin-top: -8vh;
   }
   .aligned-blocks{
 width: auto;
-  margin-top: 53vh;
+  margin-top: 56vh;
     text-align: center;
     
   }
@@ -226,7 +226,7 @@ width: auto;
 
   
   .content-area {
-  margin-top: -3vh;
+  margin-top: -2.5vh;
   }
   .main-image{
     object-fit: cover;
