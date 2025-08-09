@@ -226,9 +226,19 @@ width: auto;
 
   
   .content-area {
+  margin-top: 2vh;
+    height: 80vh;
+  }
+
+
+  @supports (-webkit-touch-callout: none) {
+  /* Safari on iOS and macOS */
+  
+  .content-area {
   margin-top: -2.5vh;
     height: 80vh;
   }
+}
   .main-image{
     object-fit: cover;
     width: 100%;
