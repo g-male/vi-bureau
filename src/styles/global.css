@@ -194,7 +194,7 @@ right: auto;
   
   .homepage-container {
    width: 100%;
-   min-height: 100vh;
+   min-height: 100dvh;
     aspect-ratio: 9/16;
     overflow-x: hidden;
 margin-top: -11vh;
