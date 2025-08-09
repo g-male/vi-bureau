@@ -236,7 +236,7 @@ width: auto;
   .left-block{
    transform: translateX(0);
    width: 100%;
-   position: relative;
+   position: fixed;
 
    margin-left: 14vw;
    height: 75%;
