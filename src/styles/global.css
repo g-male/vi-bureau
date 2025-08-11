@@ -236,7 +236,7 @@ right: auto;
       height: 75vh !important;
       margin-top: 0; /* Remove the negative margin */
       /* Alternative: use position absolute for more control */
-      position: relative;
+      position: absolute;
       top: 50%;
       transform: translateY(-50%);
     }
