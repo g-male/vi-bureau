@@ -227,7 +227,7 @@ width: auto;
   
   .content-area {
 
-    height: 70vh;
+    height: 70vh !important;
   }
 
 
@@ -236,7 +236,8 @@ width: auto;
   
   .content-area {
   margin-top: -2.5vh;
-    height: 80vh;
+    height: 80vh !important;
+    border: 1px solid red;
   }
 }
   .main-image{
