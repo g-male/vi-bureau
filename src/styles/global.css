@@ -174,7 +174,6 @@ right: auto;
 }
 }
 
-
 /* Mobile adjustments */
 @media (max-width: 767px) {
   html, body{
@@ -183,35 +182,31 @@ right: auto;
   }
   .main-title{
     font-size: 1.8rem;
-    
   }
 
   .main-title img{
-
-  width: 64vw;
-}
-
-  
-  .homepage-container {
-   width: 100%;
-   min-height: 100vh;
-    aspect-ratio: 9/16;
-    overflow-x: hidden;
-margin-top: -17dvh;
+    width: 64vw;
   }
 
-  
+  .homepage-container {
+    width: 100%;
+    min-height: 100vh;
+    aspect-ratio: 9/16;
+    overflow-x: hidden;
+    margin-top: -17dvh;
+  }
+
   .title-section {
     top: 1rem;
-   margin-bottom: 0;
+    margin-bottom: 0;
     width: auto;
     transform: translateX(0);
   }
+  
   .aligned-blocks{
-width: auto;
-  margin-top: 56vh;
+    width: auto;
+    margin-top: 56vh;
     text-align: center;
-    
   }
   
   .links-section {
@@ -220,46 +215,58 @@ width: auto;
     right: 1rem;
     font-size: 2vw;
     margin-left: 15vw;
- transform: translateX(0) !important;
- letter-spacing: 0.5vw;
+    transform: translateX(0) !important;
+    letter-spacing: 0.5vw;
   }
 
-  
   .content-area {
-
     height: 70vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-
- @supports (-webkit-touch-callout: none) and (not (hover: hover)) {
-  /* Safari on iOS and macOS */
-  
-  .content-area {
-  margin-top: -2.5vh;
-    height: 80vh !important;
-    border: 1px solid red;
+  /* Safari on mobile - more specific targeting */
+  @supports (-webkit-touch-callout: none) and (not (hover: hover)) {
+    .homepage-container {
+      margin-top: -12dvh; /* Adjust this value */
+    }
+    
+    .content-area {
+      height: 75vh !important;
+      margin-top: 0; /* Remove the negative margin */
+      /* Alternative: use position absolute for more control */
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .aligned-blocks {
+      margin-top: 52vh; /* Adjust text position accordingly */
+    }
   }
-}
+
   .main-image{
     object-fit: cover;
     width: 100%;
   }
+  
   .left-block{
-   transform: translateX(0);
-   width: 100%;
-   position: fixed;
-
-   margin-left: 14vw;
-   height: 75%;
+    transform: translateX(0);
+    width: 100%;
+    position: fixed;
+    margin-left: 14vw;
+    height: 75%;
   }
+  
   .bottom-text-block{
-width: 90vw;
- max-width: 600px;
-font-size: 2vw;
-text-align: left;
-margin-top: 2rem;
-line-height: 0.95rem;
-transform: translateX(0) !important;
- letter-spacing: 0.5vw;
+    width: 90vw;
+    max-width: 600px;
+    font-size: 2vw;
+    text-align: left;
+    margin-top: 2rem;
+    line-height: 0.95rem;
+    transform: translateX(0) !important;
+    letter-spacing: 0.5vw;
   }
 }
