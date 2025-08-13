@@ -9,7 +9,9 @@ export default function ModelClientWrapper({ homepage }) {
   const titleRef = useRef(null);
   const linksRef = useRef(null);
   const bottomTextRef = useRef(null);
+
   const [layoutReady, setLayoutReady] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
 
   const positionElements = useCallback(() => {
     if (!titleRef.current) return;
@@ -30,7 +32,6 @@ export default function ModelClientWrapper({ homepage }) {
   useEffect(() => {
     const runAfterFonts = () => {
       requestAnimationFrame(() => {
-        // Reveal layout
         setLayoutReady(true);
         requestAnimationFrame(() => {
           positionElements();
@@ -50,18 +51,37 @@ export default function ModelClientWrapper({ homepage }) {
     };
   }, [positionElements]);
 
+  // Typewriter effect
+  useEffect(() => {
+    if (homepage?.bottomTextBlock && layoutReady) {
+      let i = 0;
+      const text = homepage.bottomTextBlock;
+      const speed = 50; // ms per character
+
+      setDisplayedText(''); // reset before typing
+      const typingInterval = setInterval(() => {
+        if (i < text.length) {
+          setDisplayedText((prev) => prev + text.charAt(i));
+          i++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, speed);
+
+      return () => clearInterval(typingInterval);
+    }
+  }, [homepage?.bottomTextBlock, layoutReady]);
+
   return (
     <div className="homepage-container">
-   
-        
-              <div className="left-block">
+      <div className="left-block">
         <div className="title-section">
           <div
             ref={titleRef}
             className="main-title"
             style={{ visibility: layoutReady ? 'visible' : 'hidden' }}
           >
-       <img src="/unnamed-2.webp" alt="VI Bureau" />
+            <img src="/unnamed-2.webp" alt="VI Bureau" />
           </div>
         </div>
 
@@ -71,7 +91,6 @@ export default function ModelClientWrapper({ homepage }) {
             className="links-section"
             style={{
               visibility: layoutReady ? 'visible' : 'hidden',
-              
             }}
           >
             {homepage?.links?.map((link, index) => (
@@ -90,10 +109,9 @@ export default function ModelClientWrapper({ homepage }) {
               className="bottom-text-block"
               style={{
                 visibility: layoutReady ? 'visible' : 'hidden',
-               
               }}
             >
-              <p>{homepage.bottomTextBlock}</p>
+              <p>{displayedText}</p>
             </div>
           )}
         </div>
@@ -114,7 +132,6 @@ export default function ModelClientWrapper({ homepage }) {
               priority
               className="main-image"
               onLoad={() => {
-                // As backup: re-position once image is in
                 setTimeout(() => {
                   positionElements();
                 }, 25);
@@ -123,9 +140,6 @@ export default function ModelClientWrapper({ homepage }) {
           </picture>
         )}
       </div>
-
-</div>
-
-   
+    </div>
   );
 }
