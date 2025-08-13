@@ -12,6 +12,7 @@ export default function ModelClientWrapper({ homepage }) {
 
   const [layoutReady, setLayoutReady] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
+  const [textHeight, setTextHeight] = useState(null);
 
   const positionElements = useCallback(() => {
     if (!titleRef.current) return;
@@ -29,6 +30,22 @@ export default function ModelClientWrapper({ homepage }) {
     console.log('Positioned with title width:', titleWidth);
   }, []);
 
+  // Measure the full height of the paragraph before typing starts
+  useEffect(() => {
+    if (homepage?.bottomTextBlock) {
+      const tempEl = document.createElement('p');
+      tempEl.style.visibility = 'hidden';
+      tempEl.style.position = 'absolute';
+      tempEl.style.width = '100%';
+      tempEl.style.whiteSpace = 'normal';
+      tempEl.innerText = homepage.bottomTextBlock;
+      document.body.appendChild(tempEl);
+      setTextHeight(tempEl.offsetHeight);
+      document.body.removeChild(tempEl);
+    }
+  }, [homepage?.bottomTextBlock]);
+
+  // Layout positioning after fonts load
   useEffect(() => {
     const runAfterFonts = () => {
       requestAnimationFrame(() => {
@@ -109,6 +126,8 @@ export default function ModelClientWrapper({ homepage }) {
               className="bottom-text-block"
               style={{
                 visibility: layoutReady ? 'visible' : 'hidden',
+                height: textHeight ? `${textHeight}px` : 'auto',
+                overflow: 'hidden',
               }}
             >
               <p>{displayedText}</p>
