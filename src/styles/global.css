@@ -191,9 +191,9 @@ right: auto;
   .homepage-container {
     width: 100%;
     min-height: 100vh;
-    aspect-ratio: 9/16;
+   
     overflow-x: hidden;
-    margin-top: -12dvh;
+    margin-top: -14dvh;
   }
 
   .title-section {
@@ -205,7 +205,7 @@ right: auto;
   
   .aligned-blocks{
     width: auto;
-    margin-top: 56vh;
+    margin-top: 53vh;
     text-align: center;
   }
   
