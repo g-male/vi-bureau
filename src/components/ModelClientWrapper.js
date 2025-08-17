@@ -112,7 +112,7 @@ export default function ModelClientWrapper({ homepage }) {
           >
             {homepage?.links?.map((link, index) => (
               <React.Fragment key={index}>
-                {index !== 0 && <span className="divider">/</span>}
+                {index !== 0 && <span className="divider">  &nbsp;/&nbsp;   </span>}
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   {link.label}
                 </a>
@@ -127,7 +127,7 @@ export default function ModelClientWrapper({ homepage }) {
               style={{
                 visibility: layoutReady ? 'visible' : 'hidden',
                 height: textHeight ? `${textHeight}px` : 'auto',
-                overflow: 'hidden',
+               
               }}
             >
               <p>{displayedText}</p>

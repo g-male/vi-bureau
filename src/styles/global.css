@@ -117,24 +117,27 @@ width: auto;
   flex-direction: row;
   gap: 1rem;
   font-size: 0.4vw;
-    letter-spacing: 0.18vw;
+    letter-spacing: 0.1vw;
   z-index: 10;
 }
+
 .bottom-text-block {
   width: 35vw; /* Set your desired fixed width */
   max-width: 90vw; /* fallback on small screens */
-  margin-top: 3rem;
+  margin-top: 3vh;
  
 
-  line-height: 1.4;
+  line-height: 0.8vw;
 display: flex;
   flex-direction: row;
   font-size: 0.4vw;
-   letter-spacing: 0.18vw;
+   letter-spacing: 0.1vw;
   gap: 1rem;
 
 }
-
+.bottom-text-block p{
+    text-align: justify;
+}
 
 .links-section a {
   color: black;
@@ -214,9 +217,10 @@ right: auto;
     top: 1rem;
     right: 1rem;
     font-size: 2vw;
-    margin-left: 15vw;
+   
     transform: translateX(0) !important;
     letter-spacing: 0.5vw;
+    display: block;
   }
 
   .content-area {
@@ -260,7 +264,7 @@ right: auto;
   }
   
   .bottom-text-block{
-    width: 90vw;
+    width: 80vw;
     max-width: 600px;
     font-size: 2vw;
     text-align: left;
