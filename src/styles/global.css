@@ -214,21 +214,20 @@ right: auto;
     
     .content-area {
       height: 75vh !important;
-      margin-top: 0; /* Remove the negative margin */
-      /* Alternative: use position absolute for more control */
+      margin-top: 0; 
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
     }
     
     .aligned-blocks {
-      margin-top: 53vh; /* Adjust text position accordingly */
+      margin-top: 53vh; 
     }
   }
   
   .aligned-blocks{
     width: auto;
-    margin-top: 48dvh;
+    margin-top: 48dvh !important;
     text-align: center;
   }
   
