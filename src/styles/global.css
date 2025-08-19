@@ -171,6 +171,7 @@ height: 75vh;
 .bottom-text-block{
   font-size: 0.8vw;
   width: 58vw;
+  line-height: 1.1vhw;
 }
 .links-section{
   font-size: 0.8vw;
@@ -191,7 +192,7 @@ height: 75vh;
   }
 
   .main-title img{
-    width: 64vw;
+    width: 61vw;
   }
 
   .homepage-container {
