@@ -192,11 +192,14 @@ right: auto;
   }
 
   .homepage-container {
-    width: 100%;
-    min-height: 100vh;
-   
-    overflow-x: hidden;
-    margin-top: -21vh;
+   display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100dvh; /* use dvh to avoid mobile browser chrome shifting */
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .title-section {
@@ -205,29 +208,20 @@ right: auto;
     width: auto;
     transform: translateX(0);
   }
-
-  /* Safari on mobile - more specific targeting */
-  @supports (-webkit-touch-callout: none) and (not (hover: hover)) {
-    .homepage-container {
-      margin-top: -6dvh; /* Adjust this value */
-    }
-    
-    .content-area {
-      height: 75vh !important;
+  .content-area{
+ height: 75vh !important;
       margin-top: 0; 
       position: absolute;
       top: 50%;
+      width: 88%;
       transform: translateY(-50%);
-    }
-    
-    .aligned-blocks {
-      margin-top: 49vh !important; 
-    }
   }
+
+
   
   .aligned-blocks{
     width: auto;
-    margin-top: 45vh !important;
+    margin-top: 52vh !important;
     text-align: center;
   }
   
@@ -243,7 +237,7 @@ right: auto;
   }
 
   .content-area {
-    height: 70vh !important;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,8 +253,9 @@ right: auto;
     transform: translateX(0);
     width: 100%;
     position: fixed;
-    margin-left: 14vw;
+    margin-left: 4vw;
     height: 75%;
+    margin-top: 11vh;
   }
   
   .bottom-text-block{
