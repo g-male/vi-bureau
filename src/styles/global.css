@@ -209,7 +209,7 @@ right: auto;
   /* Safari on mobile - more specific targeting */
   @supports (-webkit-touch-callout: none) and (not (hover: hover)) {
     .homepage-container {
-      margin-top: -10dvh; /* Adjust this value */
+      margin-top: -8dvh; /* Adjust this value */
     }
     
     .content-area {
@@ -221,7 +221,7 @@ right: auto;
     }
     
     .aligned-blocks {
-      margin-top: 51vh !important; 
+      margin-top: 49vh !important; 
     }
   }
   
