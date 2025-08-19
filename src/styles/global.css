@@ -221,7 +221,7 @@ right: auto;
     }
     
     .aligned-blocks {
-      margin-top: 53vh; 
+      margin-top: 53vh !important; 
     }
   }
   
