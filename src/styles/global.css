@@ -151,26 +151,29 @@ display: flex;
 }
 
   /* For iPad portrait layouts only */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 .left-block{
-  margin-top: 10vw;
+  margin-top: 1vw;
 }
-
+.aligned-blocks{
+  margin-top: 57vh;
+}
 .content-area{
 margin-left: 23vw;
 width: 149%;
 right: auto;
+height: 75vh;
 }
 .left-block{
   margin-left: 0vw;
 }
 
 .bottom-text-block{
-  font-size: 0.7vw;
-  width: 60vw;
+  font-size: 0.8vw;
+  width: 58vw;
 }
 .links-section{
-  font-size: 0.7vw;
+  font-size: 0.8vw;
 }
 .main-title{
   font-size: 1.8vw;
