@@ -212,7 +212,7 @@ right: auto;
  height: 75vh !important;
       margin-top: 0; 
       position: absolute;
-      top: 45%;
+      top: 43%;
       width: 88%;
       transform: translateY(-50%);
   }
@@ -221,7 +221,7 @@ right: auto;
   
   .aligned-blocks{
     width: auto;
-    margin-top: 52vh !important;
+    margin-top: 51vh !important;
     text-align: center;
   }
   
@@ -255,7 +255,7 @@ right: auto;
     position: fixed;
     margin-left: 4vw;
     height: 75%;
-    margin-top: 5vh;
+    margin-top: 4vh;
   }
   
   .bottom-text-block{
