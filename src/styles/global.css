@@ -212,7 +212,7 @@ right: auto;
  height: 75vh !important;
       margin-top: 0; 
       position: absolute;
-      top: 50%;
+      top: 45%;
       width: 88%;
       transform: translateY(-50%);
   }
@@ -255,7 +255,7 @@ right: auto;
     position: fixed;
     margin-left: 4vw;
     height: 75%;
-    margin-top: 11vh;
+    margin-top: 5vh;
   }
   
   .bottom-text-block{
