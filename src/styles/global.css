@@ -224,7 +224,7 @@ height: 75vh;
 
   
   .aligned-blocks{
-    width: auto;
+    width: 100vw;
     margin-top: 51vh !important;
     text-align: center;
   }
@@ -234,7 +234,7 @@ height: 75vh;
     top: 1rem;
     right: 1rem;
     font-size: 2vw;
-   
+   margin-left: -15vw;
     transform: translateX(0) !important;
     letter-spacing: 0.5vw;
     display: block;
@@ -263,11 +263,11 @@ height: 75vh;
   }
   
   .bottom-text-block{
-    width: 75vw;
+    width: 81vw;
     max-width: 600px;
     font-size: 2vw;
     text-align: left;
-    margin-top: 2rem;
+    margin-top: 4vh;
     line-height: 0.95rem;
     transform: translateX(0) !important;
     letter-spacing: 0.5vw;
