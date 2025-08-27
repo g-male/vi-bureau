@@ -76,19 +76,21 @@ export default function ModelClientWrapper({ homepage }) {
       const speed = 50; // ms per character
 
       setDisplayedText(''); // reset before typing
-      const typingInterval = setInterval(() => {
-        if (i < text.length) {
-          setDisplayedText((prev) => prev + text.charAt(i));
-          i++;
-        } else {
-          clearInterval(typingInterval);
-        }
-      }, speed);
+const typingInterval = setInterval(() => {
+  if (i < text.length) {
+    setDisplayedText(text.substring(0, i + 1));
+    i++;
+  } else {
+    clearInterval(typingInterval);
+  }
+}, speed);
+
 
       return () => clearInterval(typingInterval);
     }
   }, [homepage?.bottomTextBlock, layoutReady]);
 
+  
   return (
     <div className="homepage-container">
       <div className="left-block">
