@@ -58,34 +58,61 @@ export default {
       },
       validation: Rule => Rule.required()
     },
+
+    // In schemas/model.js, update the gallery field:
+{
+  name: 'gallery',
+  title: 'Image Gallery',
+  type: 'array',
+  description: 'Collection of model images and videos for portfolio',
+  of: [
     {
-      name: 'gallery',
-      title: 'Image Gallery',
-      type: 'array',
-      description: 'Collection of model images for portfolio',
-      of: [
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      fields: [
         {
-          type: 'image',
+          name: 'aspectRatio',
+          title: 'Aspect Ratio',
+          type: 'string',
           options: {
-            hotspot: true
+            list: [
+              { title: 'Portrait (4:5)', value: '4:5' },
+              { title: 'Large (8:5)', value: '8:5' }
+            ]
           },
-          fields: [
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Caption',
-              description: 'Caption for this image'
-            },
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative text',
-              description: 'Important for SEO and accessibility'
-            }
-          ]
+          initialValue: '4:5'
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption'
         }
       ]
     },
+    {
+      type: 'file',
+      title: 'Video',
+      options: {
+        accept: 'video/*'
+      },
+      fields: [
+        {
+          name: 'aspectRatio',
+          title: 'Aspect Ratio',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Large (8:5)', value: '8:5' }
+            ]
+          },
+          initialValue: '8:5'
+        }
+      ]
+    }
+  ]
+},
     {
       name: 'stats',
       title: 'Model Stats',
@@ -162,7 +189,25 @@ export default {
           type: 'url'
         }
       ]
-    }
+    },
+    {
+  name: 'sedcardPdf',
+  title: 'Sedcard PDF',
+  type: 'file',
+  options: {
+    accept: 'application/pdf'
+  }
+},
+{
+  name: 'portfolioFile',
+  title: 'Portfolio ZIP',
+  type: 'file',
+  options: {
+    accept: '.zip'
+  }
+}
+
+
   ],
   preview: {
     select: {

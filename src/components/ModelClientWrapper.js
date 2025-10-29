@@ -13,9 +13,9 @@ export default function ModelClientWrapper({ homepage, model }) {
   const router = useRouter();
 
   // Debug: Check what data we're receiving
-  console.log('Homepage data:', homepage);
-  console.log('Model data:', model);
-  console.log('First model:', model?.[0]);
+  //console.log('Homepage data:', homepage);
+  //console.log('Model data:', model);
+  //console.log('First model:', model?.[0]);
 
   const [layoutReady, setLayoutReady] = useState(false);
   const [displayedText, setDisplayedText] = useState('');

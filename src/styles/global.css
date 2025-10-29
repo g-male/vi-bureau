@@ -301,6 +301,196 @@ height: 75vh;
 }
 }
 
+/* Model Detail Page - Desktop */
+.model-detail-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.model-header {
+  position: fixed;
+  top: 1.5dvh;
+  left: 3rem;
+  z-index: 100;
+}
+
+.header-logo {
+  width: 12vw;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.gender-filter-detail {
+  position: fixed;
+  top: 1.5dvh;
+  right: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 100;
+  font-size: 0.7vw;
+  letter-spacing: 0.15vw;
+  text-transform: uppercase;
+}
+
+/* Left side info - matches homepage .left-block structure */
+.model-info-left {
+  z-index: 999;
+  flex: 0 0 20%;
+  position: relative;
+  z-index: 5;
+  margin-left: 2vw;
+}
+
+/* Name section - matches .title-section on homepage */
+.model-name-title {
+  margin-bottom: 1rem;
+  position: absolute;
+  left: 0;
+  transform: translateX(100%);
+  width: auto;
+  color: black;
+  font-size: 1.5vw;
+  font-weight: 300;
+  letter-spacing: 0.5vw;
+}
+/* Aligned blocks container - matches .aligned-blocks on homepage */
+.model-info-aligned {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 68vh;
+}
+
+/* Links section - matches .aligned-blocks and .links-section on homepage */
+.model-links-section {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 0.4vw;
+  letter-spacing: 0.1vw;
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+.model-links-section a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.model-links-section a:hover {
+  opacity: 0.6;
+}
+
+/* Stats block - matches .bottom-text-block on homepage */
+.model-stats-block {
+ width: 35vw;
+  max-width: 90vw;
+  margin-top: 3vh;
+  line-height: 0.8vw;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.4vw;
+  letter-spacing: 0.1vw;
+  gap: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Gallery area */
+.model-gallery-area {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.model-gallery-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: none;
+  user-select: none;
+  padding-left: 25%;
+}
+
+.model-gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.model-gallery-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  height: 100%;
+  width: max-content;
+}
+
+.gallery-column-stacked {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0;
+}
+
+.gallery-column-single {
+  display: flex;
+  height: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.gallery-item.portrait {
+  aspect-ratio: 4 / 5;
+  height: 50%;
+}
+
+.gallery-item.large {
+  aspect-ratio: 8 / 5;
+  height: 100%;
+}
+
+.gallery-image,
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 1.2vw;
+  letter-spacing: 0.2vw;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+
+
 /* Mobile adjustments */
 @media (max-width: 767px) {
   html, body{
@@ -450,4 +640,74 @@ height: 75vh;
   .custom-cursor {
     display: none !important;
   }
+
+  .model-header {
+    left: 1rem;
+    top: 1rem;
+  }
+  
+  .header-logo {
+    width: 40vw;
+  }
+  
+  .gender-filter-detail {
+    position: fixed;
+    top: auto;
+    right: auto;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vw;
+    gap: 1rem;
+  }
+  
+  .model-info-left {
+    left: 4vw;
+    top: auto;
+    bottom: 8rem;
+    transform: none;
+    pointer-events: none;
+  }
+  
+  .model-info-left * {
+    pointer-events: auto;
+  }
+  
+  .model-name-title {
+    font-size: 5vw;
+  }
+  
+  .model-stats-block {
+    font-size: 2vw;
+  }
+  
+  .model-links-section {
+    font-size: 2vw;
+    flex-direction: column;
+  }
+  
+  .model-gallery-area {
+    height: 75vh;
+    top: 43%;
+  }
+  
+  .model-gallery-scroll {
+    padding-left: calc(50% - 18vw);
+    overflow-x: scroll !important;
+    cursor: default;
+  }
+  
+  .gallery-item.portrait {
+    min-width: 150px;
+  }
+  
+  .gallery-item.large {
+    min-width: 300px;
+  }
+  
+  .custom-cursor {
+    display: none !important;
+  }
+
+
 }
