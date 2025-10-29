@@ -1,3 +1,4 @@
+// schemas/model.js
 export default {
   name: 'model',
   title: 'Models',
@@ -22,6 +23,20 @@ export default {
       type: 'string',
       description: 'Last name of the model'
     },
+    {
+  name: 'gender',
+  title: 'Gender',
+  type: 'string',
+  options: {
+    list: [
+      { title: 'He', value: 'he' },
+      { title: 'She', value: 'she' },
+      { title: 'They', value: 'they' }
+    ],
+    layout: 'radio'
+  },
+  validation: Rule => Rule.required()
+},
     {
       name: 'slug',
       title: 'Slug',

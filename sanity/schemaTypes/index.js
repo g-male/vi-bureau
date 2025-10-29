@@ -5,7 +5,7 @@ import homepage from './homepage';
 export const schema = {
   types: [
     
-    homepage,
+    homepage, model
     // Add other schema types here
   ],
 }

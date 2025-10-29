@@ -1,24 +1,31 @@
 import React from 'react';
-import groq from 'groq';
 import { client } from '@/lib/sanity';
 import ModelClientWrapper from '@/components/ModelClientWrapper';
 
-
-
-// Home page component
 export default async function Home() {
-  // Fetch homepage data from Sanity
-  const homepage = await client.fetch(`
-    *[_type == "homepage"][0] {
-       title,
-  home_Large_image,
-  home_Mobile_image,
-  links,
-  bottomTextBlock
-    }
-  `);
+  const [homepage, model] = await Promise.all([
+    client.fetch(`
+      *[_type == "homepage"][0] {
+        title,
+        links,
+        bottomTextBlock
+      }
+    `),
+    client.fetch(`
+      *[_type == "model"] | order(order asc) {
+        _id,
+        name,
+          portrait {
+      asset-> {
+        _id,
+        url
+      }
+    },
+    slug,
+    gender
+  }
+`)
+  ]);
 
-  return (
-    <ModelClientWrapper homepage={homepage} />
-  );
+  return <ModelClientWrapper homepage={homepage} model={model} />;
 }

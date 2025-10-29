@@ -16,8 +16,7 @@ export default {
       type: 'image',
       options: {
         hotspot: true,
-      },
-      validation: Rule => Rule.required(),
+      }
     },
 
     {
@@ -26,8 +25,24 @@ export default {
       type: 'image',
       options: { hotspot: true 
 
-      },
-            validation: Rule => Rule.required(),
+      }
+    },
+      {
+      name: 'home_Large_video',
+      title: 'Desktop Video',
+      type: 'file',
+        options: {
+        accept: 'video/*'
+    }
+    },
+
+    {
+      name: 'home_Mobile_video',
+      title: 'Mobile Video',
+       type: 'file',
+        options: {
+        accept: 'video/*'}
+  
     },
     {
       name: 'links',
@@ -64,6 +79,7 @@ export default {
       type: 'text', // or use 'blockContent' for rich text
       rows: 4,
     },
+
   ],
   preview: {
     select: {
