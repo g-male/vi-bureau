@@ -494,9 +494,11 @@ height: 75vh;
 /* Mobile adjustments */
 @media (max-width: 767px) {
   html, body{
-    overflow-y: hidden !important;
+      overflow-y: hidden !important;
     overflow-x: hidden !important;
     height: 100%;
+    position: fixed; /* Prevent address bar from causing layout shifts */
+    width: 100%;
   }
   
   .main-title{
@@ -508,14 +510,16 @@ height: 75vh;
   }
 
   .homepage-container {
-   display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height - accounts for mobile browser chrome */
     padding: 1rem;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
   }
 
   .title-section {
@@ -526,10 +530,11 @@ height: 75vh;
   }
   
   .content-area{
-    height: 75vh !important;
+     height: 100vh !important;
+    height: 100dvh !important; /* Use dynamic viewport height */
     margin-top: 0; 
-    position: absolute;
-    top: 43%;
+    position: fixed;
+    top: 50%;
     width: 100%;
     left: 0;
     transform: translateY(-50%);
@@ -537,7 +542,6 @@ height: 75vh;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    z-index: 1;
   }
   
   .left-block{
