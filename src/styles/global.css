@@ -594,7 +594,7 @@ height: 75vh;
  padding-left: calc(50% - 30vw); 
     cursor: default;
      scroll-snap-type: none; /* Disable snap */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: auto; /* Smooth scrolling */
   }
 
   .aligned-blocks{
