@@ -587,12 +587,14 @@ height: 75vh;
 
   .models-scroll-wrapper {
     width: 100%;
-    height: 100%;
+    height: 90%;
     overflow-x: scroll !important;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
  padding-left: calc(50% - 30vw); 
     cursor: default;
+     scroll-snap-type: none; /* Disable snap */
+    scroll-behavior: smooth; /* Smooth scrolling */
   }
 
   .aligned-blocks{
@@ -630,7 +632,7 @@ height: 75vh;
   }
   
   .models-grid {
-    grid-auto-columns: minmax(150px, 1fr);
+    grid-auto-columns: minmax(65vw, 1fr);
   }
   
   .model-name-overlay {
@@ -643,6 +645,7 @@ height: 75vh;
   
   .custom-cursor {
     display: none !important;
+    scroll-snap-align: none; /* Disable snap on cards */
   }
 
   .model-header {
@@ -658,9 +661,9 @@ height: 75vh;
     position: fixed;
     top: auto;
     right: auto;
-    bottom: 2rem;
+    bottom: -18dvh;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-60%);
     font-size: 2.5vw;
     gap: 1rem;
   }
