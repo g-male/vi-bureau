@@ -632,7 +632,9 @@ height: 75vh;
     letter-spacing: 0.5vw;
       pointer-events: none;
   }
-  
+    .bottom-text-block p {
+    pointer-events: none; 
+  }
   .models-grid {
     grid-auto-columns: minmax(65vw, 1fr);
   }
