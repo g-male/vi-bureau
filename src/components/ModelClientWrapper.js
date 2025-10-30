@@ -281,9 +281,6 @@ export default function ModelClientWrapper({ homepage, model }) {
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
         >
           <div className="models-grid">
             {/* Render only the filtered models */}

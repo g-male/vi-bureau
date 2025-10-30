@@ -563,9 +563,9 @@ height: 75vh;
   position: fixed;
   top: auto; /* Reset desktop top value */
   right: auto; /* Reset desktop right value */
-  bottom: 2rem;
+  bottom: -18dvh;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-65%);
   font-size: 2vw;
   letter-spacing: 0.5vw;
   gap: 1rem;
