@@ -292,6 +292,7 @@ height: 75vh;
   font-size: 0.8vw;
   width: 58vw;
   line-height: 1.1vh;
+    pointer-events: none;
 }
 .links-section{
   font-size: 0.8vw;
@@ -629,6 +630,7 @@ height: 75vh;
     line-height: 0.95rem;
     transform: translateX(0) !important;
     letter-spacing: 0.5vw;
+      pointer-events: none;
   }
   
   .models-grid {
