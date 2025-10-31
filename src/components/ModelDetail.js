@@ -249,9 +249,6 @@ export default function ModelDetail({ model, homepage }) {
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
         >
           <div className="model-gallery-grid">
             {galleryLayout.map((column, colIndex) => (

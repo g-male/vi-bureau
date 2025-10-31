@@ -432,6 +432,7 @@ height: 75dvh;
   height: 90dvh;
   overflow: hidden;
   z-index: 1;
+  cursor: grab;
 }
 
 .model-gallery-scroll {
@@ -441,7 +442,7 @@ height: 75dvh;
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  cursor: none;
+  cursor: grab;
   user-select: none;
   padding-left: 25%;
 }
