@@ -60,7 +60,7 @@ margin-bottom: 1rem;
 width: auto;
 
  color: black;
-
+z-index: 99;
 }
 
 .main-title {
@@ -599,7 +599,7 @@ height: 75vh;
 
   .aligned-blocks{
     width: 100vw;
-    margin-top: 51vh !important;
+    margin-top: 59vh !important;
     text-align: center;
     pointer-events: none;
   }

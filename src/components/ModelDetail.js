@@ -154,11 +154,13 @@ export default function ModelDetail({ model, homepage }) {
   return (
     <div className="model-detail-container">
       {/* Header with logo */}
-      <div className="model-header">
-        <Link href="/">
-          <img src="/unnamed-2.webp" alt="VI Bureau" className="header-logo" />
-        </Link>
-      </div>
+     <div className="title-section">
+  <div className="main-title">
+    <Link href="/">
+      <img src="/unnamed-2.webp" alt="VI Bureau" />
+    </Link>
+  </div>
+</div>
 
       {/* Gender Filter - keeping for now */}
       <div className="gender-filter-detail">
