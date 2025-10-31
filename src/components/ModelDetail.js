@@ -154,7 +154,7 @@ export default function ModelDetail({ model, homepage }) {
   return (
     <div className="model-detail-container">
       {/* Header with logo */}
-     <div className="title-section">
+     <div className="title-section detail">
   <div className="main-title">
     <Link href="/">
       <img src="/unnamed-2.webp" alt="VI Bureau" />
