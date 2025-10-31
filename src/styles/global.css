@@ -661,14 +661,14 @@ height: 75vh;
   }
   
   .header-logo {
-    width: 40vw;
+    width: 61vw;
   }
   
   .gender-filter-detail {
 position: fixed;
     top: auto;
     right: auto;
-    bottom: 2rem;
+    bottom: 0rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5vw;
@@ -694,7 +694,7 @@ position: fixed;
   
   .model-name-title {
        position: fixed;
-    bottom: -30vh;
+    bottom: -25vh;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5vw;
@@ -706,7 +706,7 @@ position: fixed;
    /* Aligned blocks container - positioned below name */
   .model-info-aligned {
     position: fixed;
-    bottom: -40vh;
+    bottom: -35vh;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0;
@@ -742,8 +742,8 @@ position: fixed;
   }
   
   .model-gallery-area {
-      height: 85vh;
-    height: 85dvh;
+      height: 90vh;
+    height: 90dvh;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -751,7 +751,7 @@ position: fixed;
   }
   
   .model-gallery-scroll {
-    padding-left: calc(50% - 18vw);
+    padding-left: calc(50% - 30vw);
     overflow-x: scroll !important;
     cursor: default;
     height: 100%;
