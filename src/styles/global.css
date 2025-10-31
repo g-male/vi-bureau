@@ -528,6 +528,11 @@ height: 75vh;
     width: auto;
     transform: translateX(0);
   }
+  .title-section.detail{
+margin-top: 6vh;
+margin-left: 6vw;
+
+  }
   
   .content-area{
      height: 100vh !important;
