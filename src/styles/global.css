@@ -530,7 +530,7 @@ height: 75vh;
   }
   .title-section.detail{
 margin-top: 6vh;
-margin-left: 6vw;
+margin-left: 7.6vw;
 
   }
   
@@ -699,7 +699,7 @@ position: fixed;
   
   .model-name-title {
        position: fixed;
-    bottom: -25vh;
+    bottom: -25dvh;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5vw;
@@ -711,7 +711,7 @@ position: fixed;
    /* Aligned blocks container - positioned below name */
   .model-info-aligned {
     position: fixed;
-    bottom: -35vh;
+    bottom: -35dvh;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0;
@@ -733,7 +733,7 @@ position: fixed;
     display: block;
     pointer-events: none;
     transform: translateX(0px) !important;
-    margin-top: 1vh;
+    margin-top: 1dvh;
   }
   
   .model-links-section {
