@@ -134,25 +134,8 @@ export default {
           name: 'shoeSize',
           title: 'Shoe Size',
           type: 'string'
-        },
-        {
-          name: 'hairColor',
-          title: 'Hair Color',
-          type: 'string'
-        },
-        {
-          name: 'eyeColor',
-          title: 'Eye Color',
-          type: 'string'
         }
       ]
-    },
-    {
-      name: 'bio',
-      title: 'Biography',
-      type: 'array',
-      of: [{ type: 'block' }],
-      description: 'Brief biography of the model'
     },
     {
       name: 'featured',
