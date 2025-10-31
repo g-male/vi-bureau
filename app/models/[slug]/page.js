@@ -3,7 +3,7 @@ import { client } from '@/lib/sanity';
 import ModelDetail from '@/components/ModelDetail';
 
 export default async function ModelPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   
   const [model, homepage] = await Promise.all([
     client.fetch(`
