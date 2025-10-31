@@ -12,6 +12,7 @@ export default async function ModelPage({ params }) {
         name,
         firstName,
         slug,
+        gender,
         portrait,
         gallery[] {
           _type,

@@ -28,7 +28,7 @@ html, body {
   display: flex;
    /* horizontal center */
     align-items: center; /* vertical center */
-    height: 100vh;
+    height: 100dvh;
 }
 .left-block {
  z-index: 999;
@@ -41,12 +41,15 @@ html, body {
   margin-left: 1.5vw;*/
  background: transparent;
   margin-left: 2vw;
+  pointer-events: none;
 }
-
+.left-block *{
+  pointer-events: auto;
+}
 .aligned-blocks {
   display: inline-block;
   vertical-align: top;
-  margin-top: 68vh;
+  margin-top: 68dvh;
 }
 
 /* VI BUREAU Title - 15% from left, 10% from top */
@@ -63,11 +66,25 @@ width: auto;
 z-index: 99;
 }
 
+.title-section.detail{
+
+    position: fixed;
+  top: 1dvh;
+  left: 3rem;
+  z-index: 100;
+  margin-left: 0vw !important;
+  transform: translate(0%);
+}
 .main-title {
   font-size: 1.5vw;
   font-weight: 300;
   letter-spacing: 0.5vw;
   color: black;
+}
+
+.main-title.detail img{
+
+width: 10vw;
 }
 .main-title img{
 
@@ -243,7 +260,7 @@ object-fit: cover;
 .bottom-text-block {
   width: 35vw; /* Set your desired fixed width */
   max-width: 90vw; /* fallback on small screens */
-  margin-top: 3vh;
+  margin-top: 3dvh;
  
 
   line-height: 0.8vw;
@@ -276,20 +293,20 @@ display: flex;
   margin-top: 1vw;
 }
 .aligned-blocks{
-  margin-top: 57vh;
+  margin-top: 57dvh;
 }
 .content-area{
 margin-left: 23vw;
 width: 149%;
 right: auto;
-height: 75vh;
+height: 75dvh;
 }
 
 
 .bottom-text-block{
   font-size: 0.8vw;
   width: 58vw;
-  line-height: 1.1vh;
+  line-height: 1.1dvh;
     pointer-events: none;
 }
 .links-section{
@@ -303,12 +320,12 @@ height: 75vh;
 /* Model Detail Page - Desktop */
 .model-detail-container {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: white;
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .model-header {
@@ -334,8 +351,9 @@ height: 75vh;
   z-index: 100;
   font-size: 0.7vw;
   letter-spacing: 0.15vw;
-  text-transform: uppercase;
+
 }
+
 
 /* Left side info - matches homepage .left-block structure */
 .model-info-left {
@@ -362,7 +380,7 @@ height: 75vh;
 .model-info-aligned {
   display: inline-block;
   vertical-align: top;
-  margin-top: 68vh;
+  margin-top: 68dvh;
 }
 
 /* Links section - matches .aligned-blocks and .links-section on homepage */
@@ -393,7 +411,7 @@ height: 75vh;
 .model-stats-block {
  width: 35vw;
   max-width: 90vw;
-  margin-top: 3vh;
+  margin-top: 3dvh;
   line-height: 0.8vw;
   display: flex;
   flex-direction: row;
@@ -411,7 +429,7 @@ height: 75vh;
   left: 0;
   transform: translateY(-50%);
   width: 100%;
-  height: 90vh;
+  height: 90dvh;
   overflow: hidden;
   z-index: 1;
 }
@@ -483,8 +501,7 @@ height: 75vh;
   z-index: 9999;
   font-size: 1.2vw;
   letter-spacing: 0.2vw;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  color: black;
   white-space: nowrap;
   transform: translate(-50%, -50%);
 }
@@ -508,6 +525,9 @@ height: 75vh;
   .main-title img{
     width: 61vw;
   }
+  .main-title.detail img{
+    width: 61vw;
+  }
 
   .homepage-container {
     display: flex;
@@ -529,7 +549,7 @@ height: 75vh;
     transform: translateX(0);
   }
   .title-section.detail{
-margin-top: 6vh;
+margin-top: 6dvh;
 margin-left: 7.6vw;
 
   }
@@ -555,7 +575,7 @@ margin-left: 7.6vw;
     position: fixed;
     margin-left: 4vw;
     height: 75%;
-    margin-top: 4vh;
+    margin-top: 4dvh;
     z-index: 999;
     pointer-events: none; /* Allow touch events to pass through */
   }
@@ -604,7 +624,7 @@ margin-left: 7.6vw;
 
   .aligned-blocks{
     width: 100vw;
-    margin-top: 59vh !important;
+    margin-top: 59dvh !important;
     text-align: center;
     pointer-events: none;
   }
@@ -631,7 +651,7 @@ margin-left: 7.6vw;
     max-width: 600px;
     font-size: 2vw;
     text-align: left;
-    margin-top: 4vh;
+    margin-top: 4dvh;
     line-height: 0.95rem;
     transform: translateX(0) !important;
     letter-spacing: 0.5vw;

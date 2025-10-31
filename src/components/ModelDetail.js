@@ -155,19 +155,24 @@ export default function ModelDetail({ model, homepage }) {
     <div className="model-detail-container">
       {/* Header with logo */}
      <div className="title-section detail">
-  <div className="main-title">
+  <div className="main-title detail">
     <Link href="/">
       <img src="/unnamed-2.webp" alt="VI Bureau" />
     </Link>
   </div>
 </div>
 
-      {/* Gender Filter - keeping for now */}
-      <div className="gender-filter-detail">
-        <span>HE □</span>
-        <span>SHE □</span>
-        <span>THEY □</span>
-      </div>
+     {/* Gender Filter - showing model's gender */}
+   <div className="gender-filter-detail">
+  <button className="filter-btn" disabled>HE</button>
+  <span className="filter-checkbox">{model.gender === 'he' ? '■' : '□'}</span>
+  
+  <button className="filter-btn" disabled>SHE</button>
+  <span className="filter-checkbox">{model.gender === 'she' ? '■' : '□'}</span>
+  
+  <button className="filter-btn" disabled>THEY</button>
+  <span className="filter-checkbox">{model.gender === 'they' ? '■' : '□'}</span>
+</div>
 
       {/* Left side - Model info - mirrors homepage .left-block structure */}
       <div className="model-info-left">
