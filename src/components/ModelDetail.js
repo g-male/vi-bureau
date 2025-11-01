@@ -32,7 +32,7 @@ export default function ModelDetail({ model, homepage }) {
     if (!nameRef.current) return;
 
     const nameWidth = nameRef.current.offsetWidth;
-    const offset = 384;
+    const offset = nameWidth;
 
     console.log('Name element:', nameRef.current);
     console.log('Name width:', nameWidth);

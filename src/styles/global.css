@@ -13,10 +13,16 @@
   font-style: normal;
   font-display: swap;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 html, body {
   font-family: 'ppmonumentlight';
   background-color: white;
   
+ 
 
   width: 100%;
   height: 100%;
@@ -29,6 +35,7 @@ html, body {
    /* horizontal center */
     align-items: center; /* vertical center */
     height: 100dvh;
+     animation: fadeIn 1s ease-in-out;
 }
 .left-block {
  z-index: 999;
@@ -84,7 +91,7 @@ z-index: 99;
 
 .main-title.detail img{
 
-width: 10vw;
+width: 8vw;
 }
 .main-title img{
 
@@ -197,7 +204,7 @@ display: grid;
 position: fixed;
   pointer-events: none;
   z-index: 9999;
-  font-size: 1.2vw;
+  font-size: 1.7dvw;
   letter-spacing: 0.2vw;
   color: black;
   white-space: nowrap;
@@ -326,6 +333,7 @@ height: 75dvh;
   display: flex;
   align-items: center;
   height: 100dvh;
+   animation: fadeIn 1s ease-in-out;
 }
 
 .model-header {
@@ -362,15 +370,18 @@ height: 75dvh;
   position: relative;
   z-index: 5;
   margin-left: 2vw;
+
 }
 
 /* Name section - matches .title-section on homepage */
 .model-name-title {
   margin-bottom: 1rem;
+  margin-top: -5dvh;
   position: absolute;
   left: 0;
   transform: translateX(100%);
   width: auto;
+  min-width: 15vw; /* Same as .main-title img width */
   color: black;
   font-size: 1.5vw;
   font-weight: 300;
@@ -380,7 +391,7 @@ height: 75dvh;
 .model-info-aligned {
   display: inline-block;
   vertical-align: top;
-  margin-top: 68dvh;
+  margin-top: 64dvh;
 }
 
 /* Links section - matches .aligned-blocks and .links-section on homepage */
@@ -444,7 +455,7 @@ height: 75dvh;
   -ms-overflow-style: none;
   cursor: grab;
   user-select: none;
-  padding-left: 25%;
+  padding-left: 30dvw;
 }
 
 .model-gallery-scroll::-webkit-scrollbar {
@@ -495,17 +506,7 @@ height: 75dvh;
   pointer-events: none;
 }
 
-/* Custom cursor */
-.custom-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  font-size: 1.2vw;
-  letter-spacing: 0.2vw;
-  color: black;
-  white-space: nowrap;
-  transform: translate(-50%, -50%);
-}
+
 
 
 
@@ -712,6 +713,7 @@ position: fixed;
     text-align: center;
     pointer-events: none;
     z-index: 10;
+    margin-top: 0;
   }
   
   .model-info-left * {
@@ -719,6 +721,7 @@ position: fixed;
   }
   
   .model-name-title {
+    margin-top: 0dvh;
        position: fixed;
     bottom: -25dvh;
     left: 50%;
