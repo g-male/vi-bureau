@@ -723,7 +723,7 @@ position: fixed;
   .model-name-title {
     margin-top: 0dvh;
        position: fixed;
-    bottom: -25dvh;
+    bottom: -30dvh;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5vw;
@@ -735,7 +735,7 @@ position: fixed;
    /* Aligned blocks container - positioned below name */
   .model-info-aligned {
     position: fixed;
-    bottom: -35dvh;
+    bottom: -42dvh;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0;
@@ -750,14 +750,14 @@ position: fixed;
       font-size: 2vw;
     letter-spacing: 0.5vw;
     white-space: normal;
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 90vw;
     line-height: 1.5;
     display: block;
     pointer-events: none;
     transform: translateX(0px) !important;
-    margin-top: 1dvh;
+    margin-top: 2dvh;
   }
   
   .model-links-section {
@@ -768,6 +768,7 @@ position: fixed;
     justify-content: center;
     pointer-events: auto;
      transform: translateX(0) !important;
+     gap: 0.3rem;
   }
   
   .model-gallery-area {
