@@ -200,6 +200,7 @@ export default function ModelClientWrapper({ homepage, model }) {
 
         {/* Gender Filter - clicking a button or checkbox toggles the filter on/off, multiple can be selected */}
         <div className="gender-filter">
+          
           <button 
             className={`filter-btn ${genderFilter.includes('he') ? 'active' : ''}`}
             onClick={() => toggleGenderFilter('he')}

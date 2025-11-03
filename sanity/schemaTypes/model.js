@@ -59,7 +59,7 @@ export default {
       validation: Rule => Rule.required()
     },
 
-    // In schemas/model.js, update the gallery field:
+// In schemas/model.js, update the gallery field:
 {
   name: 'gallery',
   title: 'Image Gallery',
@@ -74,15 +74,18 @@ export default {
       fields: [
         {
           name: 'aspectRatio',
-          title: 'Aspect Ratio',
+          title: 'Aspect Ratio / Size',
           type: 'string',
           options: {
             list: [
-              { title: 'Portrait (4:5)', value: '4:5' },
-              { title: 'Large (8:5)', value: '8:5' }
+              { title: 'Small Portrait (4:5) - Can stack with another', value: '4:5' },
+              { title: 'Large Portrait (4:5) - Full height', value: '4:10' },
+              { title: 'Large Landscape (8:5) - Full width', value: '8:5' },
+              { title: 'Small Landscape (8:5) - Half height', value: '8:5-half' }
             ]
           },
-          initialValue: '4:5'
+          initialValue: '4:5',
+          validation: Rule => Rule.required()
         },
         {
           name: 'caption',
@@ -100,14 +103,16 @@ export default {
       fields: [
         {
           name: 'aspectRatio',
-          title: 'Aspect Ratio',
+          title: 'Aspect Ratio / Size',
           type: 'string',
           options: {
             list: [
-              { title: 'Large (8:5)', value: '8:5' }
+              { title: 'Large Landscape (8:5) - Full width', value: '8:5' },
+              { title: 'Small Landscape (8:5) - Half height', value: '8:5-half' }
             ]
           },
-          initialValue: '8:5'
+          initialValue: '8:5',
+          validation: Rule => Rule.required()
         }
       ]
     }

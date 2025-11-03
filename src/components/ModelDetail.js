@@ -120,7 +120,7 @@ export default function ModelDetail({ model, homepage }) {
     setIsDragging(false);
   };
 
-  // Organize gallery items into layout
+  // Organize gallery items into layout with all size variations
   const layoutGallery = () => {
     const layout = [];
     let i = 0;
@@ -129,15 +129,48 @@ export default function ModelDetail({ model, homepage }) {
       const currentItem = model.gallery[i];
       const nextItem = model.gallery[i + 1];
       
-      // Check if current and next are both portrait (4:5)
+      // Check if current and next are both small portraits (4:5) - stack them
       if (currentItem?.aspectRatio === '4:5' && nextItem?.aspectRatio === '4:5') {
         layout.push({
-          type: 'stacked',
+          type: 'stacked-portraits',
           items: [currentItem, nextItem]
         });
         i += 2;
-      } else {
-        // Single large item
+      }
+      // Check if current and next are both small landscapes (8:5-half) - stack them
+      else if (currentItem?.aspectRatio === '8:5-half' && nextItem?.aspectRatio === '8:5-half') {
+        layout.push({
+          type: 'stacked-landscapes',
+          items: [currentItem, nextItem]
+        });
+        i += 2;
+      }
+      // Large portrait (4:10) - single column, full height
+      else if (currentItem?.aspectRatio === '4:10') {
+        layout.push({
+          type: 'large-portrait',
+          items: [currentItem]
+        });
+        i += 1;
+      }
+      // Large landscape (8:5) - single column, full width
+      else if (currentItem?.aspectRatio === '8:5') {
+        layout.push({
+          type: 'large-landscape',
+          items: [currentItem]
+        });
+        i += 1;
+      }
+      // Small landscape alone (8:5-half) - with whitespace
+      else if (currentItem?.aspectRatio === '8:5-half') {
+        layout.push({
+          type: 'small-landscape-alone',
+          items: [currentItem]
+        });
+        i += 1;
+      }
+      // Fallback for any other case - treat as single
+      else {
         layout.push({
           type: 'single',
           items: [currentItem]
@@ -254,12 +287,12 @@ export default function ModelDetail({ model, homepage }) {
             {galleryLayout.map((column, colIndex) => (
               <div 
                 key={colIndex}
-                className={column.type === 'stacked' ? 'gallery-column-stacked' : 'gallery-column-single'}
+                className={`gallery-column ${column.type}`}
               >
                 {column.items.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className={`gallery-item ${item.aspectRatio === '8:5' ? 'large' : 'portrait'}`}
+                    className={`gallery-item ${column.type} ${item.aspectRatio}`}
                   >
                     {item._type === 'image' ? (
                       <Image
