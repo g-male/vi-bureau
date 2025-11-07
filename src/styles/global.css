@@ -56,7 +56,7 @@ html, body {
 .aligned-blocks {
   display: inline-block;
   vertical-align: top;
-  margin-top: 68dvh;
+  margin-top: 67dvh;
 }
 
 /* VI BUREAU Title - 15% from left, 10% from top */
@@ -83,14 +83,14 @@ z-index: 99;
   transform: translate(0%);
 }
 .main-title {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.5vw;
   color: black;
 }
 
 .main-title.detail img{
-
+margin-top: 1rem;
 width: 8vw;
 }
 .main-title img{
@@ -364,7 +364,13 @@ height: 75dvh;
   letter-spacing: 0.15vw;
 
 }
+/* Target 13" MacBook (and smaller laptops) */
+@media (max-width: 1680px) and (min-width: 1024px) {
+.model-info-left{
+  top: 2rem;
+}
 
+}
 
 /* Left side info - matches homepage .left-block structure */
 .model-info-left {
@@ -603,6 +609,7 @@ height: 75dvh;
   }
   .main-title.detail img{
     width: 61vw;
+    margin-top: 0;
   }
 
   .homepage-container {
@@ -664,7 +671,7 @@ margin-left: 7.6vw;
   position: fixed;
   top: auto; /* Reset desktop top value */
   right: auto; /* Reset desktop right value */
-  bottom: -19dvh;
+  bottom: -18dvh;
   left: 50%;
   transform: translateX(-65%);
   font-size: 2vw;
@@ -746,6 +753,8 @@ margin-left: 7.6vw;
 
   .model-card {
     cursor: pointer !important;
+    touch-action: manipulation; /* Improves tap speed */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
   }
   
   .custom-cursor {
@@ -769,7 +778,7 @@ margin-left: 7.6vw;
 position: fixed;
     top: auto;
     right: auto;
-    bottom: 0rem;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5vw;

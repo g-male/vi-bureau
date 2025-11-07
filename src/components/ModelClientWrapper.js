@@ -17,6 +17,7 @@ export default function ModelClientWrapper({ homepage, model }) {
   //console.log('Model data:', model);
   //console.log('First model:', model?.[0]);
 
+  const [isNavigating, setIsNavigating] = useState(false);
   const [layoutReady, setLayoutReady] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
   const [textHeight, setTextHeight] = useState(null);
@@ -94,12 +95,12 @@ export default function ModelClientWrapper({ homepage, model }) {
     if (homepage?.bottomTextBlock && layoutReady) {
       let i = 0;
       const text = homepage.bottomTextBlock;
-      const speed = 50; // ms per character
+      const speed = 30; // ms per character
 
       setDisplayedText(''); // reset before typing
       const typingInterval = setInterval(() => {
         if (i < text.length) {
-          setDisplayedText(text.substring(0, i + 1));
+          setDisplayedText(prev => text.substring(0, i + 1));
           i++;
         } else {
           clearInterval(typingInterval);
@@ -111,8 +112,11 @@ export default function ModelClientWrapper({ homepage, model }) {
   }, [homepage?.bottomTextBlock, layoutReady]);
 
   const handleModelClick = (m) => {
+    if (isNavigating) return; // Prevent multiple clicks/taps
+    setIsNavigating(true);
     router.push(`/models/${m.slug.current}`);
   };
+
 
   const handleMouseMove = (e) => {
     // Use clientX/clientY for fixed positioning (doesn't account for scroll)
