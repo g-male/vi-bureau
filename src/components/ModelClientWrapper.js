@@ -34,7 +34,7 @@ export default function ModelClientWrapper({ homepage, model }) {
 
   // NEW: Check if typewriter has already played
   useEffect(() => {
-    const typed = localStorage.getItem('typewriterPlayed');
+    const typed = sessionStorage.getItem('typewriterPlayed');
     if (typed === 'true') {
       setHasTyped(true);
       if (homepage?.bottomTextBlock) {
@@ -111,8 +111,8 @@ export default function ModelClientWrapper({ homepage, model }) {
           i++;
         } else {
           clearInterval(typingInterval);
-          // Mark as typed in localStorage
-          localStorage.setItem('typewriterPlayed', 'true');
+          // Mark as typed in sessionStorage
+          sessionStorage.setItem('typewriterPlayed', 'true');
           setHasTyped(true);
         }
       }, speed);
