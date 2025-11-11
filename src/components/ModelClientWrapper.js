@@ -12,11 +12,6 @@ export default function ModelClientWrapper({ homepage, model }) {
   const bottomTextRef = useRef(null);
   const router = useRouter();
 
-  // Debug: Check what data we're receiving
-  //console.log('Homepage data:', homepage);
-  //console.log('Model data:', model);
-  //console.log('First model:', model?.[0]);
-
   const [isNavigating, setIsNavigating] = useState(false);
   const [layoutReady, setLayoutReady] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
@@ -24,17 +19,29 @@ export default function ModelClientWrapper({ homepage, model }) {
   const [hoveredModel, setHoveredModel] = useState(null);
   const [cursorText, setCursorText] = useState('');
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [genderFilter, setGenderFilter] = useState([]); // empty array means show all
+  const [genderFilter, setGenderFilter] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const scrollContainerRef = useRef(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [hasTyped, setHasTyped] = useState(false); // NEW: Track if typewriter has played
 
   // Detect if touch device
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
   }, []);
+
+  // NEW: Check if typewriter has already played
+  useEffect(() => {
+    const typed = localStorage.getItem('typewriterPlayed');
+    if (typed === 'true') {
+      setHasTyped(true);
+      if (homepage?.bottomTextBlock) {
+        setDisplayedText(homepage.bottomTextBlock);
+      }
+    }
+  }, [homepage?.bottomTextBlock]);
 
   const positionElements = useCallback(() => {
     if (!titleRef.current) return;
@@ -90,43 +97,46 @@ export default function ModelClientWrapper({ homepage, model }) {
     };
   }, [positionElements]);
 
-  // Typewriter effect
+  // UPDATED: Typewriter effect - only play if hasn't played yet
   useEffect(() => {
-    if (homepage?.bottomTextBlock && layoutReady) {
+    if (homepage?.bottomTextBlock && layoutReady && !hasTyped) {
       let i = 0;
       const text = homepage.bottomTextBlock;
-      const speed = 30; // ms per character
+      const speed = 30;
 
-      setDisplayedText(''); // reset before typing
+      setDisplayedText('');
       const typingInterval = setInterval(() => {
         if (i < text.length) {
           setDisplayedText(prev => text.substring(0, i + 1));
           i++;
         } else {
           clearInterval(typingInterval);
+          // Mark as typed in localStorage
+          localStorage.setItem('typewriterPlayed', 'true');
+          setHasTyped(true);
         }
       }, speed);
 
       return () => clearInterval(typingInterval);
+    } else if (homepage?.bottomTextBlock && layoutReady && hasTyped) {
+      // If already typed, just show the full text immediately
+      setDisplayedText(homepage.bottomTextBlock);
     }
-  }, [homepage?.bottomTextBlock, layoutReady]);
+  }, [homepage?.bottomTextBlock, layoutReady, hasTyped]);
 
   const handleModelClick = (m) => {
-    if (isNavigating) return; // Prevent multiple clicks/taps
+    if (isNavigating) return;
     setIsNavigating(true);
     router.push(`/models/${m.slug.current}`);
   };
 
-
   const handleMouseMove = (e) => {
-    // Use clientX/clientY for fixed positioning (doesn't account for scroll)
     setCursorPosition({ x: e.clientX, y: e.clientY });
     
-    // Handle drag scrolling
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
+    const walk = (x - startX) * 2;
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -144,7 +154,6 @@ export default function ModelClientWrapper({ homepage, model }) {
     setIsDragging(false);
   };
 
-  // Touch event handlers for mobile
   const handleTouchStart = (e) => {
     if (!isTouchDevice) return;
     const touch = e.touches[0];
@@ -167,26 +176,20 @@ export default function ModelClientWrapper({ homepage, model }) {
     setIsDragging(false);
   };
 
-  // Toggle gender filter - can select multiple
   const toggleGenderFilter = (gender) => {
     setGenderFilter(prev => {
       if (prev.includes(gender)) {
-        // Remove gender if already selected
         return prev.filter(g => g !== gender);
       } else {
-        // Add gender to selection
         return [...prev, gender];
       }
     });
   };
 
-  // Filter models by gender
-  // When genderFilter is empty array, show all models
-  // When genderFilter has values, show models that match ANY of the selected genders
   const filteredModels = model?.filter(m => {
-    if (!m.portrait) return false; // Always hide models without portraits
-    if (genderFilter.length === 0) return true; // If no filter selected, show all models
-    return genderFilter.includes(m.gender); // Show models that match any selected gender
+    if (!m.portrait) return false;
+    if (genderFilter.length === 0) return true;
+    return genderFilter.includes(m.gender);
   });
 
   return (
@@ -202,9 +205,7 @@ export default function ModelClientWrapper({ homepage, model }) {
           </div>
         </div>
 
-        {/* Gender Filter - clicking a button or checkbox toggles the filter on/off, multiple can be selected */}
         <div className="gender-filter">
-          
           <button 
             className={`filter-btn ${genderFilter.includes('he') ? 'active' : ''}`}
             onClick={() => toggleGenderFilter('he')}
@@ -288,7 +289,6 @@ export default function ModelClientWrapper({ homepage, model }) {
           onMouseLeave={handleMouseLeave}
         >
           <div className="models-grid">
-            {/* Render only the filtered models */}
             {filteredModels?.map((m, index) => (
               <div
                 key={m._id || index}

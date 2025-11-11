@@ -91,7 +91,7 @@ z-index: 99;
 
 .main-title.detail img{
 margin-top: 1rem;
-width: 8vw;
+width: clamp(80px, 8vw, 160px);
 }
 .main-title img{
 
@@ -184,7 +184,7 @@ width: 8vw;
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  cursor: none;
+  cursor: default;
   user-select: none;
   padding-left: 30dvw;
 }
@@ -201,14 +201,15 @@ display: grid;
   gap: 0;
   height: 100%;
   width: max-content;
+  padding-right: 3rem;
 }
 /* Custom cursor for model names */
 .custom-cursor {
 position: fixed;
   pointer-events: none;
   z-index: 9999;
-  font-size: 1.7dvw;
-  letter-spacing: 0.2vw;
+  font-size: 1.6vw;
+  letter-spacing: 0.7vw;
   color: black;
   white-space: nowrap;
   transform: translate(-55%, -50%);
@@ -868,6 +869,7 @@ position: fixed;
     overflow-x: scroll !important;
     cursor: default;
     height: 100%;
+    padding-right: calc(50% - 30vw);
   }
   
   .gallery-item.portrait {
