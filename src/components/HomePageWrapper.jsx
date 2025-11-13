@@ -6,9 +6,11 @@ import ModelClientWrapper from './ModelClientWrapper';
 
 export default function HomePageWrapper({ homepage, model }) {
   const [showLanding, setShowLanding] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
-  // Check if video has already played in this session
+  // Wait for client-side mount before checking sessionStorage
   useEffect(() => {
+    setMounted(true);
     const hasPlayedThisSession = sessionStorage.getItem('landingPlayed');
     if (hasPlayedThisSession === 'true') {
       setShowLanding(false);
@@ -16,10 +18,14 @@ export default function HomePageWrapper({ homepage, model }) {
   }, []);
 
   const handleEnter = () => {
-    // Mark as played for this session only
     sessionStorage.setItem('landingPlayed', 'true');
     setShowLanding(false);
   };
+
+  // Don't render anything until mounted (avoids hydration mismatch)
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
