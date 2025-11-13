@@ -1,6 +1,6 @@
 import React from 'react';
 import { client } from '@/lib/sanity';
-import ModelClientWrapper from '@/components/ModelClientWrapper';
+import HomePageWrapper from '@/components/HomePageWrapper';
 
 export default async function Home() {
   const [homepage, model] = await Promise.all([
@@ -15,17 +15,18 @@ export default async function Home() {
       *[_type == "model"] | order(order asc) {
         _id,
         name,
-          portrait {
-      asset-> {
-        _id,
-        url
+        firstName,
+        portrait {
+          asset-> {
+            _id,
+            url
+          }
+        },
+        slug,
+        gender
       }
-    },
-    slug,
-    gender
-  }
-`)
+    `)
   ]);
 
-  return <ModelClientWrapper homepage={homepage} model={model} />;
+  return <HomePageWrapper homepage={homepage} model={model} />;
 }

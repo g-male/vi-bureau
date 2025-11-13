@@ -209,7 +209,7 @@ position: fixed;
   pointer-events: none;
   z-index: 9999;
   font-size: 1.6vw;
-  letter-spacing: 0.7vw;
+  letter-spacing: 0.5vw;
   color: black;
   white-space: nowrap;
   transform: translate(-55%, -50%);
