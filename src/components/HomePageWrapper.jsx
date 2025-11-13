@@ -1,13 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LandingPage from './LandingPage';
 import ModelClientWrapper from './ModelClientWrapper';
 
 export default function HomePageWrapper({ homepage, model }) {
   const [showLanding, setShowLanding] = useState(true);
 
+  // Check if video has already played in this session
+  useEffect(() => {
+    const hasPlayedThisSession = sessionStorage.getItem('landingPlayed');
+    if (hasPlayedThisSession === 'true') {
+      setShowLanding(false);
+    }
+  }, []);
+
   const handleEnter = () => {
+    // Mark as played for this session only
+    sessionStorage.setItem('landingPlayed', 'true');
     setShowLanding(false);
   };
 
