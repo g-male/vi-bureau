@@ -16,7 +16,7 @@ export default function HomePageWrapper({ homepage, model }) {
       {showLanding ? (
         <LandingPage 
           onEnter={handleEnter}
-          videoUrl="/VI BUREAU_11.11.25_1.mp4"
+          videoUrl="/2-VI BUREAU_11.11.25_1.mp4"
         />
       ) : (
         <ModelClientWrapper homepage={homepage} model={model} />
