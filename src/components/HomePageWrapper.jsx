@@ -5,16 +5,11 @@ import LandingPage from './LandingPage';
 import ModelClientWrapper from './ModelClientWrapper';
 
 export default function HomePageWrapper({ homepage, model }) {
-  const [showLanding, setShowLanding] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const [showLanding, setShowLanding] = useState(null);
 
-  // Wait for client-side mount before checking sessionStorage
   useEffect(() => {
-    setMounted(true);
     const hasPlayedThisSession = sessionStorage.getItem('landingPlayed');
-    if (hasPlayedThisSession === 'true') {
-      setShowLanding(false);
-    }
+    setShowLanding(hasPlayedThisSession !== 'true');
   }, []);
 
   const handleEnter = () => {
@@ -22,8 +17,7 @@ export default function HomePageWrapper({ homepage, model }) {
     setShowLanding(false);
   };
 
-  // Don't render anything until mounted (avoids hydration mismatch)
-  if (!mounted) {
+  if (showLanding === null) {
     return null;
   }
 
@@ -32,7 +26,8 @@ export default function HomePageWrapper({ homepage, model }) {
       {showLanding ? (
         <LandingPage 
           onEnter={handleEnter}
-          videoUrl="/2-VI BUREAU_11.11.25_1.mp4"
+          videoUrl="/2-VI BUREAU_11.11.25_1.mp4"           // Desktop video
+          mobileVideoUrl="/TEASER_2.mp4"  // Mobile portrait video
         />
       ) : (
         <ModelClientWrapper homepage={homepage} model={model} />
